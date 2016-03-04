@@ -72,6 +72,12 @@
     <ClCompile Include="memento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -126,6 +132,12 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="memento.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="strategy.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>

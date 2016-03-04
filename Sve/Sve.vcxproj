@@ -128,6 +128,8 @@
     <ClCompile Include="prototype.cpp" />
     <ClCompile Include="proxy.cpp" />
     <ClCompile Include="singleton.cpp" />
+    <ClCompile Include="state.cpp" />
+    <ClCompile Include="strategy.cpp" />
     <ClCompile Include="visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +150,8 @@
     <ClInclude Include="prototype.h" />
     <ClInclude Include="proxy.h" />
     <ClInclude Include="singleton.h" />
+    <ClInclude Include="state.h" />
+    <ClInclude Include="strategy.h" />
     <ClInclude Include="visitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

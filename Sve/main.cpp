@@ -16,6 +16,8 @@
 #include "mediator.h"
 #include "visitor.h"
 #include "memento.h"
+#include "state.h"
+#include "strategy.h"
 
 int main() {
 	abstractfactory_test();
@@ -36,6 +38,8 @@ int main() {
 	mediator_test();
 	visitor_test();
 	memento_test();
+	state_test();
+	strategy_test();
 
 	system("pause");
 	return 0;
