@@ -12,6 +12,8 @@
 #include "flyweight.h"
 #include "chainofresponsibility.h"
 #include "command.h"
+#include "observer.h"
+#include "mediator.h"
 
 int main() {
 	abstractfactory_test();
@@ -28,6 +30,8 @@ int main() {
 	flyweight_test();
 	chainofresponsibility_test();
 	command_test();
+	observer_test();
+	mediator_test();
 
 	system("pause");
 	return 0;

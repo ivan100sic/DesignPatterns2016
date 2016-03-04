@@ -122,6 +122,8 @@
     <ClCompile Include="factorymethod.cpp" />
     <ClCompile Include="flyweight.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mediator.cpp" />
+    <ClCompile Include="observer.cpp" />
     <ClCompile Include="prototype.cpp" />
     <ClCompile Include="proxy.cpp" />
     <ClCompile Include="singleton.cpp" />
@@ -138,6 +140,8 @@
     <ClInclude Include="factorymethod.h" />
     <ClInclude Include="adapter.h" />
     <ClInclude Include="flyweight.h" />
+    <ClInclude Include="mediator.h" />
+    <ClInclude Include="observer.h" />
     <ClInclude Include="prototype.h" />
     <ClInclude Include="proxy.h" />
     <ClInclude Include="singleton.h" />
