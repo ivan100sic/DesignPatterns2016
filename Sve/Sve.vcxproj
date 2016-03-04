@@ -115,6 +115,7 @@
     <ClCompile Include="bridge.cpp" />
     <ClCompile Include="builder.cpp" />
     <ClCompile Include="chainofresponsibility.cpp" />
+    <ClCompile Include="command.cpp" />
     <ClCompile Include="composite.cpp" />
     <ClCompile Include="decorator.cpp" />
     <ClCompile Include="facade.cpp" />
@@ -130,6 +131,7 @@
     <ClInclude Include="bridge.h" />
     <ClInclude Include="builder.h" />
     <ClInclude Include="chainofresponsibility.h" />
+    <ClInclude Include="command.h" />
     <ClInclude Include="composite.h" />
     <ClInclude Include="decorator.h" />
     <ClInclude Include="facade.h" />

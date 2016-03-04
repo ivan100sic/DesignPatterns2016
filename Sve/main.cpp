@@ -11,6 +11,7 @@
 #include "proxy.h"
 #include "flyweight.h"
 #include "chainofresponsibility.h"
+#include "command.h"
 
 int main() {
 	abstractfactory_test();
@@ -26,6 +27,7 @@ int main() {
 	proxy_test();
 	flyweight_test();
 	chainofresponsibility_test();
+	command_test();
 
 	system("pause");
 	return 0;

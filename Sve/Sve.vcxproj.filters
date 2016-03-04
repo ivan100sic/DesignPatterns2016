@@ -57,6 +57,9 @@
     <ClCompile Include="chainofresponsibility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -96,6 +99,9 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="chainofresponsibility.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
