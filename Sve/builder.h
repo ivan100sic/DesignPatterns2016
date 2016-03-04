@@ -8,15 +8,8 @@ using namespace std;
 /* Racunar, kaci mu se deo po deo */
 class Racunar {
 public:
-	void setKomponenta(const string& deo) {
-		komponente.push_back(deo);
-	}
-	void start() {
-		for (auto deo : komponente) {
-			cout << "Pokrecem " << deo << endl;
-		}
-		cout << "Racunar upaljen!" << endl;
-	}
+	void setKomponenta(const string& deo);
+	void start();
 protected:
 	vector<string> komponente;
 };
@@ -36,24 +29,9 @@ public:
 class Direktor {
 public:
 	Direktor() : ptr(0) {}
-
-	~Direktor() {
-		delete ptr;
-	}
-
-	void setGraditeljRacunara(GraditeljRacunara* ptr) {
-		delete this->ptr;
-		this->ptr = ptr;
-	}
-
-	Racunar* getRacunar() {
-		ptr->zapocniGradnju();
-		ptr->napraviMaticnu();
-		ptr->napraviMonitor();
-		ptr->napraviProcesor();
-		return ptr->vratiRezultat();
-	}
-
+	~Direktor();
+	void setGraditeljRacunara(GraditeljRacunara* ptr);
+	Racunar* getRacunar();
 private:
 	GraditeljRacunara* ptr;
 };
@@ -62,29 +40,11 @@ private:
 class DesktopGraditelj : public GraditeljRacunara {
 public:
 	DesktopGraditelj() : ptr(0) {}
-
-	virtual void zapocniGradnju() {
-		delete ptr;
-		ptr = new Racunar();
-	}
-
-	virtual void napraviProcesor() {
-		ptr->setKomponenta("AMD FX-8320 8-core CPU");
-	}
-
-	virtual void napraviMaticnu() {
-		ptr->setKomponenta("Gigabyte 990");
-	}
-	
-	virtual void napraviMonitor() {
-		ptr->setKomponenta("LG 22\" (primary)");
-		ptr->setKomponenta("Acer 22\" (secondary)");
-	}
-
-	virtual Racunar* vratiRezultat() {
-		return ptr;
-		ptr = 0;
-	}
+	virtual void zapocniGradnju();
+	virtual void napraviProcesor();
+	virtual void napraviMaticnu();
+	virtual void napraviMonitor();
+	virtual Racunar* vratiRezultat();
 protected:
 	Racunar* ptr;
 };

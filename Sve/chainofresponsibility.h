@@ -35,20 +35,7 @@ template<enum ENivoOdgovornosti nivo>
 class RadnikL : public IOsoba {
 public:
 	RadnikL(string ime) : IOsoba(ime) {}
-	virtual void ObradiUpit(Upit upit) {
-		if (upit.NivoUpita() <= nivo) {
-			/* Trenutni objekat u lancu JESTE sposoban da da odgovor */
-			cout << "Odgovor na pitanje: " << upit.StaJeUpit().c_str()
-				<< " je dao " << Ime().c_str() << endl;
-			return;
-		}
-		/* Trenutni objekat u lancu NIJE sposoban da da odgovor */
-		cout << "Osoba " << Ime().c_str()
-			<< " ne moze da obradi trenutni upit. Upit se salje na dalju obradu: "
-			<< (PtrToSef()->Ime()).c_str() << endl;
-		/* Zahtev se salje na dalju obradu sledecem objektu u lancu odgovornosti */
-		PtrToSef()->ObradiUpit(upit);
-	}
+	virtual void ObradiUpit(Upit upit);
 };
 
 void chainofresponsibility_test();

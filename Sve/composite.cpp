@@ -40,3 +40,26 @@ void composite_test() {
 	direktor.getPlata(0);
 	cout << '\n';
 }
+
+inline void Radnik::getPlata(int level) const {
+	for (int j = 0; j < level; ++j) cout << "\t";
+	cout << "Radnik : " << m_Ime.c_str() << ", plata: $" << m_plata << "\n";
+}
+
+void Menadzer::add(Komponenta * cmp) {
+	m_tim.push_back(cmp);
+}
+
+inline void Menadzer::getPlata(int nivo) const {
+	for (int j = 0; j < nivo; ++j) cout << "\t";
+	cout << "Menadzer : " << m_Ime.c_str() << ", plata: $" << m_plata << "\n";
+
+	if (!m_tim.empty()) {
+		for (int x = 0; x < nivo; ++x) cout << "\t";
+		cout << "Tim saradnika " << m_Ime.c_str() << ":\n";
+		++nivo;
+		for (auto mate : m_tim) {
+			mate->getPlata(nivo);
+		}
+	}
+}

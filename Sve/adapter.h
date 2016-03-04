@@ -11,21 +11,15 @@ struct IPrintable {
 };
 
 struct Printer {
-	void print() const {
-		cout << "Print internal PrintJob" << endl; 
-	}
+	void print() const;
 };
 
 struct Fax {
-	void fax(const char* str) const {
-		cout << "Fax & Print " << str << endl;
-	}
+	void fax(const char* str) const;
 };
 
 struct CompliantPrinter : public IPrintable {
-	virtual void print(const char* str) const {
-		cout << str << endl;
-	}
+	virtual void print(const char* str) const;
 };
 
 template<class T>

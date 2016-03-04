@@ -12,3 +12,15 @@ void adapter_test() {
 
 	for (auto printer : printeri) delete printer;
 }
+
+void Printer::print() const {
+	cout << "Print internal PrintJob" << endl;
+}
+
+void Fax::fax(const char * str) const {
+	cout << "Fax & Print " << str << endl;
+}
+
+void CompliantPrinter::print(const char * str) const {
+	cout << str << endl;
+}

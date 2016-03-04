@@ -7,52 +7,22 @@ template<class T>
 class SmartPtr {
 	T* ptr;
 	size_t* br;
-
-	void detach() {
-		--*br;
-		if (*br == 0) {
-			delete ptr;
-			delete br;
-		}
-	}
-
+	void detach();
 public:
-
 	SmartPtr(T* ptr) : ptr(ptr), br(new size_t(1)) {}
-
-	SmartPtr(const SmartPtr& other) : ptr(ptr), br(br) {
-		++*br;
-	}
-
-	SmartPtr& operator= (const SmartPtr& other) {
-		if (this != &other) {
-			detach();
-			ptr = other.ptr;
-			br = other.br;
-			++*br;
-		}
-		return *this;
-	}
-
+	SmartPtr(const SmartPtr& other) : ptr(ptr), br(br) { ++*br; }
+	SmartPtr& operator= (const SmartPtr& other);
 	T* operator-> () { return ptr; }
 	T& operator* () { return *ptr; }
 	const T* operator-> () const { return ptr; }
 	const T& operator* () const { return *ptr; }
-
-	~SmartPtr() {
-		detach();
-	}
-
+	~SmartPtr() { detach(); }
 };
 
 struct Proxyn {
-	Proxyn(int x) {
-		cout << "Konstruktor " << x << "\n";
-	}
-
-	~Proxyn() {
-		cout << "Destruktor\n";
-	}
+	Proxyn(int x);
+	~Proxyn();
 };
 
 void proxy_test();
+

@@ -18,31 +18,11 @@ template<class T>
 class LancanaLista : public IMemorija<T> {
 	Cvor<T>* glava;
 public:
-	bool jePrazna() {
-		return glava == 0;
-	}
-
+	bool jePrazna();
 	LancanaLista() : glava(0) {}
-
-	void dodaj(T x) {
-		glava = new Cvor<T>(x, glava);
-	}
-
-	T uzmi() {
-		T tmp = glava->info;
-		auto p = glava;
-		glava = glava->next;
-		delete p;
-		return tmp;
-	}
-
-	~LancanaLista() {
-		while (glava) {
-			auto p = glava;
-			glava = glava->next;
-			delete p;
-		}
-	}
+	void dodaj(T x);
+	T uzmi();
+	~LancanaLista();
 };
 
 template<class T>
@@ -52,30 +32,12 @@ class Niz : public IMemorija<T> {
 	int kapac;
 	static const int INIT_SIZE = 2;
 
-	void povecaj() {
-		T* p = new T[kapac*2];
-		for (int i = 0; i < top; i++) {
-			p[i] = data[i];
-		}
-		kapac *= 2;
-		delete[] data;
-		data = p;
-	}
+	void povecaj();
 public:
 	Niz() : data(new T[INIT_SIZE]), top(0), kapac(INIT_SIZE) {}
-
-	void dodaj(T x) {
-		if (top == kapac) povecaj();
-		data[top++] = x;
-	}
-
-	T uzmi() {
-		return data[--top];
-	}
-
-	~Niz() {
-		delete[] data;
-	}
+	void dodaj(T x);
+	T uzmi();
+	~Niz();
 };
 
 // I sada mozemo da implementiramo stek

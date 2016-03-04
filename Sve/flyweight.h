@@ -16,11 +16,7 @@ class FlyweightFactory {
 	static string strs[256];
 	static uint8_t cnt;
 public:
-	static StringFlyweight add(const string& str) {
-		strs[cnt] = str;
-		return StringFlyweight{ cnt++ };
-	}
-
+	static StringFlyweight add(const string& str);
 	friend struct StringFlyweight;
 };
 

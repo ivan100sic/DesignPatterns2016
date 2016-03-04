@@ -3,7 +3,6 @@
 /* Jos jedan dobar primer: odlozeno izracunavanje */
 
 /* Sve ove stvari su obsolete sa pojavom C++11 */
-
 template<class T, class U>
 class PlusOp {
 	const T& levi;
@@ -71,4 +70,32 @@ void proxy_test() {
 	Tacka t1(1, 2), t2(3, 4), t3(5, 6);
 	Tacka t = (t1 + t2) + (t3 + t1);
 	cout << t.getX() << ", " << t.getY() << endl;
+}
+
+Proxyn::Proxyn(int x) {
+	cout << "Konstruktor " << x << "\n";
+}
+
+Proxyn::~Proxyn() {
+	cout << "Destruktor\n";
+}
+
+template<class T>
+void SmartPtr<T>::detach() {
+	--*br;
+	if (*br == 0) {
+		delete ptr;
+		delete br;
+	}
+}
+
+template<class T>
+SmartPtr<T>& SmartPtr<T>::operator= (const SmartPtr& other) {
+	if (this != &other) {
+		detach();
+		ptr = other.ptr;
+		br = other.br;
+		++*br;
+	}
+	return *this;
 }

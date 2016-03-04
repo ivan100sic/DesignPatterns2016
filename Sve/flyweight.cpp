@@ -19,3 +19,8 @@ void flyweight_test() {
 		cout << i << endl;
 	}
 }
+
+StringFlyweight FlyweightFactory::add(const string & str) {
+	strs[cnt] = str;
+	return StringFlyweight{ cnt++ };
+}

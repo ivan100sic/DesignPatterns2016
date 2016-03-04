@@ -1,5 +1,22 @@
 #include "chainofresponsibility.h"
 
+template<ENivoOdgovornosti nivo>
+void RadnikL<nivo>::ObradiUpit(Upit upit) {
+	if (upit.NivoUpita() <= nivo) {
+		/* Trenutni objekat u lancu JESTE sposoban da da odgovor */
+		cout << "Odgovor na pitanje: " << upit.StaJeUpit().c_str()
+			<< " je dao " << Ime().c_str() << endl;
+		return;
+	}
+	/* Trenutni objekat u lancu NIJE sposoban da da odgovor */
+	cout << "Osoba " << Ime().c_str()
+		<< " ne moze da obradi trenutni upit. Upit se salje na dalju obradu: "
+		<< (PtrToSef()->Ime()).c_str() << endl;
+	/* Zahtev se salje na dalju obradu sledecem objektu u lancu odgovornosti */
+	PtrToSef()->ObradiUpit(upit);
+}
+
+
 void chainofresponsibility_test() {
 	RadnikL<NIZAK> rad("Petar Djuric");
 	RadnikL<SREDNJI> sup("Vojislav Mitrovic");

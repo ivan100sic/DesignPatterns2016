@@ -4,6 +4,8 @@
 
 Pen* Pen::protoArray[10];
 
+void Pen::Write() const { cout << "\nVrh pera " << type << endl; }
+
 Pen* Pen::create(int idx) {
 	Pen* proto;
 	if (proto = protoArray[idx])
@@ -27,10 +29,20 @@ Pen* FountainPen::clone() const {
 	return new FountainPen(*this);
 }
 
+void FountainPen::Write() const {
+	cout << "\nNaliv pero " << endl;
+	Pen::Write();
+}
+
 // RollerBallPen
 
 Pen* RollerBallPen::clone() const {
 	return new RollerBallPen(*this);
+}
+
+void RollerBallPen::Write() const {
+	cout << "\nRoller " << endl;
+	Pen::Write();
 }
 
 void prototype_test() {
@@ -48,4 +60,14 @@ void prototype_test() {
 	ptrPen->Write();
 	delete ptrPen;
 	Pen::destroyPrototypes();
+}
+
+void BallPointPen::Write() const {
+	cout << "\nOlovka" << endl;
+	Pen::Write();
+}
+
+template<class Derived>
+Pen* CloneablePen<Derived>::clone() const {
+	return new Derived(*(Derived*)this);
 }
