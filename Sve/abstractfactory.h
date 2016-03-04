@@ -12,16 +12,12 @@ public:
 
 class Product_A : public AbsProduct {
 public:
-	int Get() {
-		return 525;
-	}
+	int Get() {	return 525; }
 };
 
 class Product_B : public AbsProduct {
 public:
-	int Get() {
-		return 6487;
-	}
+	int Get() {	return 6487; }
 };
 
 template <class T>
@@ -34,24 +30,15 @@ public:
 template <class Derived, class Base>
 class DerivedCreator : public Creator<Base> {
 public:
-	virtual Base* Create() {
-		return new Derived;
-	}
+	virtual Base* Create() { return new Derived; }
 };
 
 template <class T>
 class Factory {
 public:
-	void Register(int id, Creator<T>* ptrToCreator) {
-		creatorRegister[id] = ptrToCreator;
-	}
-
-	T* Create(int id) { return creatorRegister[id]->Create(); }
-	~Factory() {
-		for (auto& it : creatorRegister) {
-			delete it.second;
-		}
-	}
+	void Register(int id, Creator<T>* ptrToCreator);
+	T* Create(int id);
+	~Factory();
 private:
 	map<int, Creator<T>*> creatorRegister;
 };

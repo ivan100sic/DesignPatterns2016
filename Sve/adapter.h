@@ -26,30 +26,15 @@ template<class T>
 class PrintableAdapter : public IPrintable {
 public:
 	PrintableAdapter(T* ptr) : ptr(ptr) {}
-
-	virtual void print(const char* str) const {
-		adapt(ptr, str);
-	}
-
-	virtual ~PrintableAdapter() {
-		delete ptr;
-	}
+	virtual void print(const char* str) const;
+	virtual ~PrintableAdapter() { delete ptr; }
 private:
-
 	template<class U>
-	static void adapt(U* t, const char* str) {
-		t->print(str);
-	}
+	static void adapt(U* t, const char* str);
 
-	template<>
-	static void adapt<Printer>(Printer* t, const char*) {
-		t->print();
-	}
+	static void adapt(Printer* t, const char*);
 
-	template<>
-	static void adapt<Fax>(Fax* t, const char* str) {
-		t->fax(str);
-	}
+	static void adapt(Fax* t, const char* str);
 
 	T* ptr;
 };

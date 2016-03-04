@@ -1,5 +1,20 @@
 #include "abstractfactory.h"
 
+template<class T>
+inline void Factory<T>::Register(int id, Creator<T>* ptrToCreator) {
+	creatorRegister[id] = ptrToCreator;
+}
+
+template<class T>
+inline T * Factory<T>::Create(int id) { return creatorRegister[id]->Create(); }
+
+template<class T>
+inline Factory<T>::~Factory() {
+	for (auto& it : creatorRegister) {
+		delete it.second;
+	}
+}
+
 void abstractfactory_test() {
 	Factory<AbsProduct> temp;
 	temp.Register(0, new DerivedCreator<Product_A, AbsProduct>);

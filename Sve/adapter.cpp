@@ -24,3 +24,24 @@ void Fax::fax(const char * str) const {
 void CompliantPrinter::print(const char * str) const {
 	cout << str << endl;
 }
+
+template<class T>
+inline void PrintableAdapter<T>::print(const char * str) const {
+	adapt(ptr, str);
+}
+
+template<class T>
+template<class U>
+void PrintableAdapter<T>::adapt(U * t, const char * str) {
+	t->print(str);
+}
+
+template<class T>
+void PrintableAdapter<T>::adapt(Printer * t, const char *) {
+	t->print();
+}
+
+template<class T>
+void PrintableAdapter<T>::adapt(Fax * t, const char * str) {
+	t->fax(str);
+}
