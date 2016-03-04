@@ -14,6 +14,8 @@
 #include "command.h"
 #include "observer.h"
 #include "mediator.h"
+#include "visitor.h"
+#include "memento.h"
 
 int main() {
 	abstractfactory_test();
@@ -32,6 +34,8 @@ int main() {
 	command_test();
 	observer_test();
 	mediator_test();
+	visitor_test();
+	memento_test();
 
 	system("pause");
 	return 0;

@@ -66,6 +66,12 @@
     <ClCompile Include="mediator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="visitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -114,6 +120,12 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="mediator.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="visitor.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memento.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
