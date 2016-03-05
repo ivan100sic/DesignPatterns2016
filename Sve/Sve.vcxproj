@@ -121,6 +121,8 @@
     <ClCompile Include="facade.cpp" />
     <ClCompile Include="factorymethod.cpp" />
     <ClCompile Include="flyweight.cpp" />
+    <ClCompile Include="interpreter.cpp" />
+    <ClCompile Include="iterator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mediator.cpp" />
     <ClCompile Include="memento.cpp" />
@@ -130,6 +132,7 @@
     <ClCompile Include="singleton.cpp" />
     <ClCompile Include="state.cpp" />
     <ClCompile Include="strategy.cpp" />
+    <ClCompile Include="templatemethod.cpp" />
     <ClCompile Include="visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +147,8 @@
     <ClInclude Include="factorymethod.h" />
     <ClInclude Include="adapter.h" />
     <ClInclude Include="flyweight.h" />
+    <ClInclude Include="interpreter.h" />
+    <ClInclude Include="iterator.h" />
     <ClInclude Include="mediator.h" />
     <ClInclude Include="memento.h" />
     <ClInclude Include="observer.h" />
@@ -152,6 +157,7 @@
     <ClInclude Include="singleton.h" />
     <ClInclude Include="state.h" />
     <ClInclude Include="strategy.h" />
+    <ClInclude Include="templatemethod.h" />
     <ClInclude Include="visitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

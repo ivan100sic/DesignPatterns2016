@@ -78,6 +78,15 @@
     <ClCompile Include="strategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="templatemethod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iterator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interpreter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -138,6 +147,15 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="strategy.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="templatemethod.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iterator.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interpreter.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>

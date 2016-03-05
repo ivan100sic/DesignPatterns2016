@@ -18,6 +18,9 @@
 #include "memento.h"
 #include "state.h"
 #include "strategy.h"
+#include "templatemethod.h"
+#include "iterator.h"
+#include "interpreter.h"
 
 int main() {
 	abstractfactory_test();
@@ -40,6 +43,9 @@ int main() {
 	memento_test();
 	state_test();
 	strategy_test();
+	templatemethod_test();
+	iterator_test();
+	interpreter_test();
 
 	system("pause");
 	return 0;
