@@ -2,7 +2,13 @@
 
 template<class T>
 inline void Factory<T>::Register(int id, Creator<T>* ptrToCreator) {
-	creatorRegister[id] = ptrToCreator;
+	auto it = creatorRegister.find(id);
+	if (it != creatorRegister.end()) {
+		delete it->second;
+		it->second = ptrToCreator;
+	} else {
+		creatorRegister[id] = ptrToCreator;
+	}
 }
 
 template<class T>

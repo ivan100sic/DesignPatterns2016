@@ -55,4 +55,23 @@ public:
 	}
 };
 
+// Jos jedan stek, koji vise lici na ono sto bi moglo da se ocekuje u Javi
+
+template<class T>
+class Stek2 {
+	IMemorija<T>* mem;
+public:
+	Stek2(IMemorija<T>* mem) : mem(mem) {}
+
+	void push(T x) {
+		mem->dodaj(x);
+	}
+
+	T pop() {
+		return mem->uzmi();
+	}
+
+	~Stek2() { delete mem; }
+};
+
 void bridge_test();

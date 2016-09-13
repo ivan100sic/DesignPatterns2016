@@ -60,7 +60,7 @@ Niz<T>::~Niz() {
 
 void bridge_test() {
 	Stek<int> stek;
-	Stek<int, LancanaLista> stek_lista;
+	Stek2<int> stek_lista(new LancanaLista<int>);
 	for (int i = 0; i < 5; i++) {
 		stek.push(i);
 		stek_lista.push(i);
